@@ -5,7 +5,7 @@ public class Operation3 {
 		int num = 11;
 		
 		boolean flag1 =  true;
-		boolean flag2 =  true;
+		boolean flag2 =  false;
 		boolean flag3 = num % 2 == 0;
 		
 		System.out.println(flag1 && flag2);
