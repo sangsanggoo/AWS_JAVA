@@ -1,4 +1,4 @@
-package J15_인터패이스;
+package J15_인터페이스;
 
 public interface Calculator {
 	public int ERROR = -999999;

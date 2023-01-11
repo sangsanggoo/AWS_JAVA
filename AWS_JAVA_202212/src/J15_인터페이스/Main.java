@@ -1,4 +1,4 @@
-package J15_인터패이스;
+package J15_인터페이스;
 
 public class Main {
 	public static void main(String[] args) {
@@ -8,7 +8,7 @@ public class Main {
 		
 		Calculator calculator = new Computer();
 
-
+		
 		System.out.println("모든 장비 전원 켜기");
 		for (Equipment eq : equipments) {
 			eq.powerOn();

@@ -1,4 +1,4 @@
-package J15_인터패이스;
+package J15_인터페이스;
 
 public abstract class Equipment {
 	public abstract void powerOn();
