@@ -1,4 +1,4 @@
-package j01_입력;
+package J01_출력;
 
 import java.util.Scanner;
 

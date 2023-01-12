@@ -23,5 +23,10 @@ public class ToString {
 		System.out.println(student3.toString());
 		System.out.println(student4.toString());
 		System.out.println(student5.toString());
+		
+		//toString이 생략되어있다
+		//대입 할때는 .toString() 생략이 불가능
+//		String name = s 는 안되고
+//		String name = s.toString()으로 해야함
 }
 }

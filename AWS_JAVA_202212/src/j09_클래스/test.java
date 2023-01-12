@@ -13,4 +13,9 @@ public class test {
 		System.out.println("전화번호 : " + phone);
 		System.out.println();
 	}
+
+	@Override
+	public String toString() {
+		return "test [id=" + id + ", password=" + password + ", email=" + email + ", phone=" + phone + "]";
+	}
 }

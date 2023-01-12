@@ -1,6 +1,8 @@
-package j01_입력;
+package J01_출력;
 
 import java.util.Scanner;
+
+import J17_스태틱.싱글톤.KIA;
 
 public class Input1 {
 
@@ -24,6 +26,8 @@ public class Input1 {
 		System.out.print("5번 : ");
 		Num5 = in.nextInt();
 		System.out.println("합은 : " + (Num1 + Num2 + Num3 + Num4 + Num5));
+		KIA.getInstance().printCompnayName();
+
 	}
 
 }

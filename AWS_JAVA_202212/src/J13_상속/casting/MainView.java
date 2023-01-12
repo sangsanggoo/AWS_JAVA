@@ -8,7 +8,7 @@ public class MainView extends View {
 		System.out.println("1. [메인] 메뉴 1번");
 		System.out.println("2. [메인] 메뉴 2번");
 		System.out.println("3. 수정 메뉴 이동");
-		System.out.println("exit. 영역 종료");
+                                                                                                                                                                                                                                                                                             		System.out.println("exit. 영역 종료");
 		System.out.println("=======================");
 	}
 	

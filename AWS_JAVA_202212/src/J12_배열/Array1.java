@@ -24,5 +24,8 @@ public class Array1  {
 		for(int i = 0 ; i < 5 ; i++) {
 			System.out.println(a[i]);
 		}
+		for(int s : a) {
+			System.out.println(s);
+		}
 	}
 }
