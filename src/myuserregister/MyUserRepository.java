@@ -3,7 +3,7 @@ package myuserregister;
 import java.util.ArrayList;
 import java.util.List;
 
-import usermanagement.repository.UserRepository;
+import usermanagement.repository.UserRepositoryArrayList;
 
 public class MyUserRepository {
 	private List<MyUser> MyUserDataList ;

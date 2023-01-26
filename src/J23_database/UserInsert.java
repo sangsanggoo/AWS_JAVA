@@ -24,8 +24,8 @@ public class UserInsert {
 		int successCount = 0;
 		
 		String sql = null;
-		Connection connection = null;
-		PreparedStatement preparedStatement = null;
+		Connection connection = null; //DB와 연결 해주는거
+		PreparedStatement preparedStatement = null; //쿼리 실행
 		ResultSet resultSet = null;
 		
 		try {
@@ -39,9 +39,9 @@ public class UserInsert {
 			preparedStatement.setString(1, user.getUsername());
 			preparedStatement.setString(2, user.getPassword());
 			preparedStatement.setString(3, user.getName());
-			preparedStatement.setString(4, user.getEmail());
+			preparedStatement.setString(4, user.getEmail()); //sql채워주기~
 
-			successCount = preparedStatement.executeUpdate();	// insert, update, delete 명령 실행
+			successCount = preparedStatement.executeUpdate();	// insert, update, delete 명령 실행 (쿼리 실행)
 			
 			resultSet = preparedStatement.getGeneratedKeys();
 			
@@ -105,7 +105,7 @@ public class UserInsert {
 		UserInsert userInsert = new UserInsert();
 		
 		User user = User.builder()
-				.username("eft")
+				.username("asdf")
 				.password("1234")
 				.name("ccc")
 				.email("ccc@gmail.com")
@@ -120,8 +120,8 @@ public class UserInsert {
 		/*======================================================================*/
 		
 		List<Integer> roleIdList = new ArrayList<>();
-		roleIdList.add(2);
 		roleIdList.add(3);
+		roleIdList.add(4);
 
 		Map<String, Object> map = new HashMap<>();
 		map.put("user", user);

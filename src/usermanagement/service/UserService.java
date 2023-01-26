@@ -9,6 +9,7 @@ import org.mindrot.jbcrypt.BCrypt;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import usermanagement.entity.RoleDtl;
 import usermanagement.entity.User;
 import usermanagement.repository.UserRepository;
 
@@ -26,7 +27,7 @@ public class UserService {
 	}
 	
 	private UserService() {
-		userrepository = UserRepository.getIngetInstance();
+		userrepository = UserRepository.getIntance();
 		gson = new GsonBuilder().setPrettyPrinting().create();
 	}	
 		public Map<String,String> register(String userJson) {
@@ -64,6 +65,12 @@ public class UserService {
 		System.out.println(user);
 		
 		userrepository.saveUser(user);
+		
+		RoleDtl roleDtl = RoleDtl.builder()
+				.roleId(3)
+				.userId(user.getUserId())
+				.build();
+		userrepository.saveRoleDtl(roleDtl);
 		response.put("ok","회원가입 성공");
 		
 				
