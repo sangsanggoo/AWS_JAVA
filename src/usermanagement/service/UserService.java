@@ -37,7 +37,7 @@ public class UserService {
 		Map<String, String> userMap = gson.fromJson(userJson, Map.class);
 		for(Entry<String,String> userEntry : userMap.entrySet()) { //userMap에
 			if(userEntry.getValue().isBlank()) { //isBlank space가 있어도 없다 생각 isEmpty는 space가 있으면 있다 생각
-				response.put("error", userEntry.getKey()+ "은(는) 공백일 수 없습니다.");
+				response            .put("error", userEntry.getKey()+ "은(는) 공백일 수 없습니다.");
 				return response;
 			}
 		}

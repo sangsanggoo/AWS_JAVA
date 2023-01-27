@@ -1,26 +1,27 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+import java.util.StringTokenizer;
 
 public class Main {
 
-	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		int a = scanner.nextInt();
-		String[] b = new String[80];
-		for(int i = 0 ; i < a ; i++) {
-			b[i] = scanner.nextLine();
-		}
-		int score = 0;
-		int score1 = 1;
-		for( int i = 0 ; i  < 80;i++) {
-			char[] c = b[i].toCharArray();
-			if(c[i] == 'O') {
-				score +=score1;
-				while(c[i+1]==c[i]) {
-					score1 +=1;
-				}
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+		int a = Integer.parseInt(st.nextToken());
+		int b = Integer.parseInt(st.nextToken());
+		int c = Integer.parseInt(st.nextToken());
+		int snail = 0;
+		int i ;
+		for(i = 1 ; snail < c; i++  ) {
+			snail +=a;
+			if(snail>=c) {
+				break;
 			}
-			System.out.println(score);
+			snail -=b;
+			
 		}
-		
+		System.out.println(i);
 	}
 }
