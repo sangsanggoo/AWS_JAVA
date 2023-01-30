@@ -10,11 +10,9 @@ public class MapList {
 		Map<String,Object> mapp = new HashMap<String, Object>();
 		List<Map<String,Object>> customers = new ArrayList<Map<String,Object>>();
 		mapp.put("name", "홍길동");
-		customers.add(mapp);
 		mapp.put("rating", "vip");
-		customers.add(mapp);
 		mapp.put("age", "30");
-		customers.add(mapp);
+
 		mapp.put("name", "김기영");
 		customers.add(mapp);
 		mapp.put("rating", "gold");

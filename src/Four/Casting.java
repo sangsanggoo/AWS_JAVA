@@ -9,13 +9,13 @@ public class Casting {
 		programs[1] = new C();
 		for(int i = 0 ; i < programs.length ; i++) {
 			if(i == 0) {
-				programs[i] = (Java) programs[i];
-				programs[i].develop();
-				programs[i].garbageCollection();
+				Java java = (Java) programs[i];
+				java.develop();
+				java.garbageCollection();
 			} else {
-				programs[i] = (C) programs[i];
-				programs[i].develop();
-				programs[i].defineStructure();
+				C c = (C) programs[i];
+				c.develop();
+				c.defineStructure();
 			}
 				
 	}
