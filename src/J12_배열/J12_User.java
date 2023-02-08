@@ -1,14 +1,15 @@
-package J12_배열;
+package j12_배열;
 
+// Entity
 public class J12_User {
-	private String username; 	// 사용자이름(아이디,계정)
+	private String username;	// 사용자이름(아이디, 계정)
 	private String password;	// 비밀번호
 	private String name;		// 성명
 	private String email;		// 이메일
-	
-	public J12_User() {	}		// Ctrl + space 
 
-	//alt + shift  + s
+	public J12_User() {}		// ctrl + space
+
+	// alt + shift + s
 	public J12_User(String username, String password, String name, String email) {
 		super();
 		this.username = username;
@@ -16,7 +17,6 @@ public class J12_User {
 		this.name = name;
 		this.email = email;
 	}
-
 
 	public String getUsername() {
 		return username;
@@ -51,12 +51,10 @@ public class J12_User {
 	}
 
 	@Override
-	//alt + shift + s => to String 
 	public String toString() {
 		return "J12_User [username=" + username + ", password=" + password + ", name=" + name + ", email=" + email
 				+ "]";
 	}
 	
-
 	
 }

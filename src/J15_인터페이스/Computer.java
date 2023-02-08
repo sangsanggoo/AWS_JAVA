@@ -1,4 +1,4 @@
-package J15_인터페이스;
+package j15_인터페이스;
 
 public class Computer implements Calculator {
 
@@ -13,6 +13,7 @@ public class Computer implements Calculator {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	
 	@Override
 	public double division(double x, double y) {
 		// TODO Auto-generated method stub

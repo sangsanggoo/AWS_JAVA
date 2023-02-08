@@ -14,5 +14,5 @@ public class User {
 	private String name;
 	private String email;
 	
-	private List<RoleDtl> roleDtl;
+	private List<RoleDtl> roleDtls;
 }

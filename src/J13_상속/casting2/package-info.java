@@ -1,1 +1,0 @@
-package J13_상속.casting2;

@@ -1,28 +1,39 @@
-package J20_Json;
+package j20_JSON;
 
 public class Json1 {
-//	아주 중요함 👍👍👍
+
 	public static void main(String[] args) {
 		/*
+		 * 
 		 * {
-		 * "key" : "value"
+		 * 		"key" : "value"
 		 * }
-		 *  [user]
+		 * 
+		 * [user]
 		 * "{
 		 * 		"username" : "junil",
 		 * 		"password" : "1234",
-		 * 		"name" : "김준일: ,
-		 * 		"email" : "bagume61@gmail.com",
+		 * 		"name" : "김준일",
+		 * 		"email" : "skjil1218@gmail.com",
 		 * 		"age" : 30,
-		 * 		"hobby: [
-		 * 				"골프",
-		 * 				"농구",
-		 * 				"축구"],
+		 * 		"hobby" : [
+		 * 					"골프",
+		 * 					"농구",
+		 * 					"축구"
+		 * 				  ],
 		 * 		"school" : {
-		 * 					"schoolName" : "부산교육대학원",
-		 * 					"address" : "부산시
+		 * 						"schoolName" : "부산교육대학원",
+		 * 						"address" : "부산시"
+		 * 					}
 		 * }"
-		 * 전부다 문자열 방식
+		 * 
+		 * let user = {
+		 * 		username : "junil",
+		 * 		password : "1234"
+		 * }
+		 *
+		 * 
 		 */
 	}
+
 }

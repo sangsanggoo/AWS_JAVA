@@ -1,24 +1,29 @@
-package WindowBuilder.view.frame;
+package windowBuilder.view.frame;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import WindowBuilder.view.panel.MainPanel;
+import windowBuilder.view.panel.MainPanel;
 
-public class MainFrame extends JFrame{
+public class MainFrame extends JFrame {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	public MainFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 600, 500);
+//		setBounds(100, 100, 600, 500);
+		setLocation(100, 100);
+		System.out.println(getWidth());
 		
-		MainPanel mainPanel =  MainPanel.getInstance();
+		MainPanel mainPanel = MainPanel.getInstance();
 		mainPanel.init();
 		setContentPane(mainPanel);
 	}
-
+	
 }
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-package J14_추상;
+package j14_추상;
 
 public class Airplane extends Transportation {
 
@@ -13,5 +13,6 @@ public class Airplane extends Transportation {
 		// TODO Auto-generated method stub
 		
 	}
+	
 	
 }

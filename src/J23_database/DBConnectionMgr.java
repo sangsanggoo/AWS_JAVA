@@ -1,4 +1,4 @@
-package J23_database;
+package j23_database;
 
 /**
  * Copyright(c) 2001 iSavvix Corporation (http://www.isavvix.com/)

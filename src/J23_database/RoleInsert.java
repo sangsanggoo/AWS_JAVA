@@ -1,4 +1,4 @@
-package J23_database;
+package j23_database;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -20,22 +20,24 @@ public class RoleInsert {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
+		
 		try {
 			con = pool.getConnection();
 			
 			sql = "insert into role_mst values (0, ?)";
 			
 			pstmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			
 			pstmt.setString(1, roleName);
 			
-			successCount = pstmt.executeUpdate(); //
+			successCount = pstmt.executeUpdate();
 			
 			int newKey = 0;
 			
 			rs = pstmt.getGeneratedKeys();
 			if(rs.next()) {
 				newKey = rs.getInt(1);
-			} 
+			}
 			
 			System.out.println(newKey != 0 ? "새로운 키값: " + newKey : "키가 생성되지 않음");
 			

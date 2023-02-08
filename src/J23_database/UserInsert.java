@@ -1,4 +1,4 @@
-package J23_database;
+package j23_database;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -19,13 +19,12 @@ public class UserInsert {
 		pool = DBConnectionMgr.getInstance();
 	}
 	
-	
 	public int saveUser(User user) {
 		int successCount = 0;
 		
 		String sql = null;
-		Connection connection = null; //DB와 연결 해주는거
-		PreparedStatement preparedStatement = null; //쿼리 실행
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
 		ResultSet resultSet = null;
 		
 		try {
@@ -39,9 +38,9 @@ public class UserInsert {
 			preparedStatement.setString(1, user.getUsername());
 			preparedStatement.setString(2, user.getPassword());
 			preparedStatement.setString(3, user.getName());
-			preparedStatement.setString(4, user.getEmail()); //sql채워주기~
+			preparedStatement.setString(4, user.getEmail());
 
-			successCount = preparedStatement.executeUpdate();	// insert, update, delete 명령 실행 (쿼리 실행)
+			successCount = preparedStatement.executeUpdate();	// insert, update, delete 명령 실행
 			
 			resultSet = preparedStatement.getGeneratedKeys();
 			
@@ -105,7 +104,7 @@ public class UserInsert {
 		UserInsert userInsert = new UserInsert();
 		
 		User user = User.builder()
-				.username("asdf")
+				.username("ccc")
 				.password("1234")
 				.name("ccc")
 				.email("ccc@gmail.com")
@@ -120,8 +119,8 @@ public class UserInsert {
 		/*======================================================================*/
 		
 		List<Integer> roleIdList = new ArrayList<>();
+		roleIdList.add(2);
 		roleIdList.add(3);
-		roleIdList.add(4);
 
 		Map<String, Object> map = new HashMap<>();
 		map.put("user", user);

@@ -1,39 +1,61 @@
-package J19_컬렉션;
+package j19_컬렉션;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListStringMain {
+
 	public static void main(String[] args) {
-		String[] strArray = new String[] {"java" , "python" , "C++"};
-		String[] strArray2 = new String[strArray.length+1];
-		for(int i = 0 ; i < strArray.length ; i++) {
-			strArray2[i] = strArray[i]; 
-		}
-		strArray2[strArray.length] = "html";
+		String[] strArray = new String[] {"java", "python", "C++"};
 		
-		for(int i = 0 ; i < strArray.length ; i++) {
-			System.out.print(strArray[i] + " ");
+		String[] newStrArray = new String[strArray.length + 1];
+ 		//"html"
+		for(int i = 0; i < strArray.length; i++) {
+			newStrArray[i] = strArray[i];
+		}
+		newStrArray[strArray.length] = "html";
+		
+		System.out.println("[strArray]");
+		for(String str : strArray) {
+			System.out.println(str);
 		}
 		System.out.println();
-		for(int i = 0 ; i < strArray2.length ; i++) {
-			System.out.print(strArray2[i] + " ");
-		}
-			System.out.println();
-		//////////////////////////////////////////////////////
-		new ArrayList<>().add("test");
-		ArrayList<String> strList = new ArrayList<>();
-		strList.add("자바");
-		strList.add("python");
-		strList.add("C++");
-		strList.add("C++");
-		strList.remove("C++"); //제거
-		strList.add(1, "C"); // 원하는 인덱스에 추가
-		strList.remove(1); // 1번 인덱스 삭제
-		System.out.println(strList);
 		
-		for(int i = 0 ; i < strList.size();i++) {
+		System.out.println("[newStrArray]");
+		for(String str : newStrArray) {
+			System.out.println(str);
+		}
+		System.out.println();
+		
+		//////////////////////////////////////////////////////		
+		ArrayList<String> strList = new ArrayList<>();
+		strList.add("java");
+		strList.add("python");
+		strList.add("python");
+		strList.add("python");
+		strList.add("python");
+		strList.add("python");
+		strList.remove("java");
+		strList.add(1, "java");
+		strList.remove(1);
+		
+		for(int i = 0; i < strList.size(); i++) {
 			System.out.print("[" + i + "]: ");
 			System.out.println(strList.get(i));
 		}
+		
+		for(String str : strList) {
+			System.out.println(str);
+		}
 	}
+	
 }
+
+
+
+
+
+
+
+
+
