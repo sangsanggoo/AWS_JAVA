@@ -13,6 +13,7 @@ import java.net.ConnectException;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JList;
@@ -22,6 +23,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class ChattingClient extends JFrame {
 	private Socket socket;
@@ -30,6 +33,8 @@ public class ChattingClient extends JFrame {
 	private JTextField portInput;
 	private JTextField ipInput;
 	private JTextArea contentView;
+	private JList userList;
+	private DefaultListModel<String> userListModel;
 	/**
 	 * Launch the application.
 	 */
@@ -59,6 +64,7 @@ public class ChattingClient extends JFrame {
 		contentPane.setLayout(null);
 		
 		portInput = new JTextField();
+		portInput.setText("9090");
 		portInput.setBounds(828, 10, 65, 34);
 		contentPane.add(portInput);
 		portInput.setColumns(10);
@@ -88,12 +94,40 @@ public class ChattingClient extends JFrame {
 	                  OutputStream outputStream = socket.getOutputStream(); 
 	                  PrintWriter out = new PrintWriter(outputStream,true); //서버에게 보내줄 통로를 열어줌 ----(3)
 	                  
-	                  out.println(username + "님이 접속하였습니다."); // 서버에게 username + "님이 접속하였습니다." 이걸 보내줌 ----(4)
+	                  out.println(username); // 서버에게 username  이걸 보내줌 ----(4)
 	                  
-	                  String welcomeMessage = in.readLine(); // 서버에서 보내준 (5)를 다시 받음
-	                  contentView.append(welcomeMessage); //그리고 contenview에 welcomemessage를 넣어줌
+	                  
 	               }
-	               
+	               Thread thread = new Thread(() -> {
+	            	   try {
+						InputStream input = socket.getInputStream();
+						BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+						
+						while(true) {
+							String message = in.readLine();
+							if(message.startsWith("@welcome")) {
+								int tokenIndex = message.indexOf("/");
+								message = message.substring(tokenIndex+1);
+							} else if(message.startsWith("@userList")) {
+								int tokenIndex = message.indexOf("/");
+								message = message.substring(tokenIndex+1);
+								String[] usernames = message.split(",");
+								userListModel.clear();
+								for(String username : usernames) {
+									userListModel.addElement(username);
+								}
+								continue;
+							}
+							contentView.append(message + '\n');
+						}
+						
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+	            	   
+	               });
+	               thread.start();
 	               
 	            }catch (ConnectException e1) {
 	               
@@ -112,6 +146,7 @@ public class ChattingClient extends JFrame {
 		contentPane.add(connectButton);
 		
 		ipInput = new JTextField();
+		ipInput.setText("127.0.0.1");
 		ipInput.setBounds(705, 10, 111, 34);
 		contentPane.add(ipInput);
 		ipInput.setColumns(10);
@@ -127,17 +162,56 @@ public class ChattingClient extends JFrame {
 		userListScroll.setBounds(705, 54, 278, 526);
 		contentPane.add(userListScroll);
 		
-		JList userList = new JList();
+		userListModel = new DefaultListModel<>();		
+		userList = new JList(userListModel);
 		userListScroll.setViewportView(userList);
 		
 		JScrollPane messageScroll = new JScrollPane();
 		messageScroll.setBounds(12, 584, 887, 35);
 		contentPane.add(messageScroll);
 		
-		JTextArea messageInput = new JTextArea();
+		JTextField messageInput = new JTextField();
+		messageInput.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if(e.getKeyCode() == KeyEvent.VK_ENTER) {
+					if(!messageInput.getText().isBlank()) { 
+		                try {
+		                   OutputStream outputStream = socket.getOutputStream(); // 소켓안에 outputStream 들어있음
+		                   PrintWriter out = new PrintWriter(outputStream,true);
+		                   
+		                   out.println(username + ": " + messageInput.getText());
+		                   messageInput.setText("");
+		                } catch (IOException e1) {
+		                   // TODO Auto-generated catch block
+		                   e1.printStackTrace();
+		                } // 
+		               }
+				}
+			}
+		});
 		messageScroll.setViewportView(messageInput);
 		
 		JButton joinButton_1 = new JButton("입력");
+		joinButton_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e)  {
+	            if(!messageInput.getText().isBlank()) { 
+	                try {
+	                   OutputStream outputStream = socket.getOutputStream(); // 소켓안에 outputStream 들어있음
+	                   PrintWriter out = new PrintWriter(outputStream,true);
+	                   
+	                   out.println(username + ": " + messageInput.getText());
+	                   messageInput.setText("");
+	                   
+	                } catch (IOException e1) {
+	                   // TODO Auto-generated catch block
+	                   e1.printStackTrace();
+	                } // 
+	               }
+	              }
+	          });
+
 		joinButton_1.setBounds(905, 584, 78, 35);
 		contentPane.add(joinButton_1);
 	}
