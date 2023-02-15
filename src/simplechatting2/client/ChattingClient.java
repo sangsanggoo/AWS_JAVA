@@ -103,8 +103,8 @@ public class ChattingClient extends JFrame {
 					socket = new Socket(ip, port);
 					
 					JOptionPane.showMessageDialog(null, 
-							socket.getInetAddress() + "서버 접속", 
 							"접속성공", 
+							"카카오톡", 
 							JOptionPane.INFORMATION_MESSAGE);
 					
 					ClientRecive clientRecive = new ClientRecive(socket);
