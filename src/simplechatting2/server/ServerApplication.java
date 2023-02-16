@@ -1,4 +1,4 @@
-package simplechatting2.server;
+ package simplechatting2.server;
 
 import java.io.BufferedReader;
 import java.io.IOException;
