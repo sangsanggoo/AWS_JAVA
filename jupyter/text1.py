@@ -1,0 +1,1 @@
+print('test1:',__name__)
