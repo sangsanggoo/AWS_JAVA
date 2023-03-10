@@ -1,0 +1,34 @@
+.username-input {
+    border: none;
+    border-bottom: 2px solid #dbdbdb;
+    outline: none;
+}
+.username-input:active { /* 누르고 있을때 */
+    background-color: #fafafa;
+}
+.username-input:focus { /*눌렀을때*/
+    border-bottom: 2px solid #121212;
+}
+
+.ok-btn {
+    border: 1px solid #dbdbdb;
+    width: 50px;
+    height: 30px;
+    background-color: #fafafa;
+}
+.ok-btn:disabled { /*disabled 일때*/
+    background-color: rgb(194, 34, 34);
+}
+
+.ok-btn:not(:disabled):hover /*dusabled가 아니고 마우스가 올라갔을때*/ {
+    border-color: white;
+    background-color: #dbdbdb;
+}
+
+.ok-btn:not(:disabled):active/*클릭이 되었을때*/ {
+    background-color: #eee;
+}
+
+.username-input:disabled { /*disabled 일때*/
+    background-color: #dbdbdb;
+}

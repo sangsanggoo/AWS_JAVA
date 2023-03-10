@@ -1,0 +1,7 @@
+h1:nth-child(1){ /*body로부터 첫번째인 h1만 red로 바뀜 h1과 child(1)가 다를경우 적용인 안됨*/
+    color: red;
+}
+
+h1:nth-of-type(2) { /*h1들 중에서 2번째꺼*/
+    color: blue;
+}

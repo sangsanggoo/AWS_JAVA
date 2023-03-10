@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+ul {
+    list-style-type: none;
+    
+}
+
+.main-header {
+    display: flex;
+    align-items: center;
+    background-color: #161617CC;
+}
+
+
+.menu-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px auto;
+    color: #fafafa;
+    width: 998px;
+    height: 44px;
+    font-size: 12px;
+}
+
+.menu-nav > li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    cursor: pointer;
+}
+
+.sub-header {
+    display: flex;
+    width: 1024px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sub-header-right {
+
+}

@@ -1,0 +1,30 @@
+input[type = checkbox]{
+    display: none;
+}
+body{
+    display: flex;
+}
+
+input[type = checkbox] + label::after{
+    content: "";
+    display: flex;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border: 1px solid #dbdbdb;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    content: "";
+}
+/* input에 타입이 chekbox가 클릭이 되면 인접형제인 label에 스타일이 바뀌는 코드*/
+input[type = checkbox]:checked + label::after{
+    content:"●"; 
+    line-height: 40px;
+    color: red;
+}
+input[type = checkbox] + label:nth-child(6)::after { /*바디로 부터 6번째 */
+    border: 1px solid red;
+
+}
