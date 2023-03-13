@@ -1,0 +1,13 @@
+// alert("알림창을 확인해주세요");
+//alert("두번째 알림창");
+//alert(10+230);
+//console.log("머야");
+//let flag = confirm("선택해주세요");
+//console.log(flag);
+//let name = prompt("이름을 입력해주세요");
+//console.log(name);
+let num1 = Number(prompt("첫번째 숫자를 입력해주세요 :"));
+console.log("첫번째 숫자" + num1);
+let num2 = parseInt(prompt("두번째 숫자를 입력해주세요 :"));
+console.log("두번째 숫자" + num1);
+console.log(num1+num2); 
