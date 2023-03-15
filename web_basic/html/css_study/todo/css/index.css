@@ -1,0 +1,108 @@
+.main-container {
+    margin: 10px auto;
+    width: 550px;
+    height: 100%;
+}
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.main-title {
+    margin: 20px 0px 0px 20px;
+    font-size: 30px;
+}
+
+.todo-input-container {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    margin-bottom: 3px;
+    border-bottom: 2px solid #dbdbdb;
+    padding-right: 50px;
+    width: 70%;
+    height: 40px;
+}
+
+.todo-input-containe .fa-file-lines {
+    font-size: 20px;
+    margin: 8px;
+}
+
+.todo-input {
+    padding: 0.07px;
+    width: 200px;
+    height: 100%;
+    transition: padding 0.5s ease;
+}
+
+.todo-input:focus
+ {
+    padding : 0px 10px;
+ }
+.add-todo-button {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    right: 0px;
+
+    border: none;
+    padding: 5px 20px;
+    height: 100%;
+
+}
+
+.todo-content-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    height: 88%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.content-container {
+    margin : 10px;
+    width: 245px;
+    height: 235px;
+    box-shadow: 0px 0px 5px  1px #dbdbdb;
+    cursor: pointer;
+    transition : box-shadow 1s ease;
+}
+
+.content-container:hover {
+    box-shadow: 0px 0px 10px 1px #121212;
+    
+
+}
+
+.content-header {
+    display: flex;
+    border-bottom: 1px solid #f0f0f0;
+    justify-content: space-between;
+    padding: 10px;
+    padding-bottom: 5px;
+    height: 20%;
+}
+
+.todo-date {
+    display: flex;
+    font-size: 20px;
+    align-items: flex-start;
+    height: 100%;
+    line-height: 15px;
+}
+.todo-date-time {
+    display: flex;
+    align-items: flex-end;
+    font-size: 11px;
+}
+
+.content-main {
+    border-bottom: 1px solid #dbdbdb;
+    height: 70%;
+}
+.content-footer {
+    height: 10%;
+}
